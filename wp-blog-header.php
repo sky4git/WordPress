@@ -8,10 +8,10 @@ var_dump( isset( $wp_did_header ) );
 if ( ! isset( $wp_did_header ) ) {
 
 	$wp_did_header = true;
-	echo "I am here";
+	
 	// Load the WordPress library.
-	//require_once __DIR__ . '/wp-load.php';
-
+	require_once __DIR__ . '/wp-load.php';
+	echo "<h2>...finished..</h2>"
 	// Set up the WordPress query.
 	//wp();
 
