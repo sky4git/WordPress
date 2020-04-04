@@ -50,14 +50,15 @@ if ( file_exists( ABSPATH . 'wp-config.php' ) ) {
 
 	define( 'WPINC', 'wp-includes' );
 	require_once ABSPATH . WPINC . '/load.php';
-	die();
+	
 	// Standardize $_SERVER variables across setups.
 	wp_fix_server_vars();
 
 	require_once ABSPATH . WPINC . '/functions.php';
-
+	
 	$path = wp_guess_url() . '/wp-admin/setup-config.php';
-
+	var_dump('FFFFF');
+	die();
 	/*
 	 * We're going to redirect to setup-config.php. While this shouldn't result
 	 * in an infinite loop, that's a silly thing to assume, don't you think? If
