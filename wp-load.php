@@ -15,14 +15,13 @@
  *
  * @package WordPress
  */
-var_dump('HERE');
 /** Define ABSPATH as this file's directory */
 if ( ! defined( 'ABSPATH' ) ) {
 	define( 'ABSPATH', __DIR__ . '/' );
 }
 
 error_reporting( E_CORE_ERROR | E_CORE_WARNING | E_COMPILE_ERROR | E_ERROR | E_WARNING | E_PARSE | E_USER_ERROR | E_USER_WARNING | E_RECOVERABLE_ERROR );
-var_dump("error reporting enabled.");
+
 //die();
 /*
  * If wp-config.php exists in the WordPress root, or if it exists in the root and wp-settings.php
@@ -45,7 +44,7 @@ if ( file_exists( ABSPATH . 'wp-config.php' ) ) {
 	
 
 } else {
-	var_dump("in else"); 
+	
 	// A config file doesn't exist.
 
 	define( 'WPINC', 'wp-includes' );
@@ -57,7 +56,7 @@ if ( file_exists( ABSPATH . 'wp-config.php' ) ) {
 	require_once ABSPATH . WPINC . '/functions.php';
 	
 	$path = wp_guess_url() . '/wp-admin/setup-config.php';
-	var_dump('FFFFF');
+	
 	
 	/*
 	 * We're going to redirect to setup-config.php. While this shouldn't result
@@ -68,7 +67,7 @@ if ( file_exists( ABSPATH . 'wp-config.php' ) ) {
 		header( 'Location: ' . $path );
 		exit;
 	}
-	die();
+	
 	define( 'WP_CONTENT_DIR', ABSPATH . 'wp-content' );
 	require_once ABSPATH . WPINC . '/version.php';
 
