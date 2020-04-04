@@ -58,7 +58,7 @@ if ( file_exists( ABSPATH . 'wp-config.php' ) ) {
 	
 	$path = wp_guess_url() . '/wp-admin/setup-config.php';
 	var_dump('FFFFF');
-	die();
+	
 	/*
 	 * We're going to redirect to setup-config.php. While this shouldn't result
 	 * in an infinite loop, that's a silly thing to assume, don't you think? If
@@ -68,7 +68,7 @@ if ( file_exists( ABSPATH . 'wp-config.php' ) ) {
 		header( 'Location: ' . $path );
 		exit;
 	}
-
+	die();
 	define( 'WP_CONTENT_DIR', ABSPATH . 'wp-content' );
 	require_once ABSPATH . WPINC . '/version.php';
 
