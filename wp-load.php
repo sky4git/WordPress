@@ -20,8 +20,7 @@ var_dump('HERE');
 if ( ! defined( 'ABSPATH' ) ) {
 	define( 'ABSPATH', __DIR__ . '/' );
 }
-var_dump(ABSPATH);
-die();
+
 error_reporting( E_CORE_ERROR | E_CORE_WARNING | E_COMPILE_ERROR | E_ERROR | E_WARNING | E_PARSE | E_USER_ERROR | E_USER_WARNING | E_RECOVERABLE_ERROR );
 
 /*
@@ -33,17 +32,19 @@ error_reporting( E_CORE_ERROR | E_CORE_WARNING | E_COMPILE_ERROR | E_ERROR | E_W
  * If neither set of conditions is true, initiate loading the setup process.
  */
 if ( file_exists( ABSPATH . 'wp-config.php' ) ) {
+	var_dump("in if");
 
 	/** The config file resides in ABSPATH */
 	require_once ABSPATH . 'wp-config.php';
-
+	die();
 } elseif ( @file_exists( dirname( ABSPATH ) . '/wp-config.php' ) && ! @file_exists( dirname( ABSPATH ) . '/wp-settings.php' ) ) {
-
+	var_dump("in elseif");
 	/** The config file resides one level above ABSPATH but is not part of another installation */
 	require_once dirname( ABSPATH ) . '/wp-config.php';
+	die();
 
 } else {
-
+	var_dump("in else");
 	// A config file doesn't exist.
 
 	define( 'WPINC', 'wp-includes' );
