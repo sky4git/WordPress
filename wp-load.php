@@ -22,7 +22,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 error_reporting( E_CORE_ERROR | E_CORE_WARNING | E_COMPILE_ERROR | E_ERROR | E_WARNING | E_PARSE | E_USER_ERROR | E_USER_WARNING | E_RECOVERABLE_ERROR );
-
+var_dump("error reporting enabled.");
+//die();
 /*
  * If wp-config.php exists in the WordPress root, or if it exists in the root and wp-settings.php
  * doesn't, load wp-config.php. The secondary check for wp-settings.php has the added benefit
@@ -32,19 +33,19 @@ error_reporting( E_CORE_ERROR | E_CORE_WARNING | E_COMPILE_ERROR | E_ERROR | E_W
  * If neither set of conditions is true, initiate loading the setup process.
  */
 if ( file_exists( ABSPATH . 'wp-config.php' ) ) {
-	var_dump("in if");
+	var_dump("in if"); die();
 
 	/** The config file resides in ABSPATH */
 	require_once ABSPATH . 'wp-config.php';
 	die();
 } elseif ( @file_exists( dirname( ABSPATH ) . '/wp-config.php' ) && ! @file_exists( dirname( ABSPATH ) . '/wp-settings.php' ) ) {
-	var_dump("in elseif");
+	var_dump("in elseif"); die();
 	/** The config file resides one level above ABSPATH but is not part of another installation */
 	require_once dirname( ABSPATH ) . '/wp-config.php';
-	die();
+	
 
 } else {
-	var_dump("in else");
+	var_dump("in else"); die();
 	// A config file doesn't exist.
 
 	define( 'WPINC', 'wp-includes' );
