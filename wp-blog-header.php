@@ -11,7 +11,7 @@ if ( ! isset( $wp_did_header ) ) {
 	
 	// Load the WordPress library.
 	require_once __DIR__ . '/wp-load.php';
-	echo "<h2>...finished..</h2>"
+	echo "<h2>...finished..</h2>";
 	// Set up the WordPress query.
 	//wp();
 
