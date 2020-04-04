@@ -33,24 +33,24 @@ var_dump("error reporting enabled.");
  * If neither set of conditions is true, initiate loading the setup process.
  */
 if ( file_exists( ABSPATH . 'wp-config.php' ) ) {
-	var_dump("in if"); die();
+	
 
 	/** The config file resides in ABSPATH */
 	require_once ABSPATH . 'wp-config.php';
-	die();
+	
 } elseif ( @file_exists( dirname( ABSPATH ) . '/wp-config.php' ) && ! @file_exists( dirname( ABSPATH ) . '/wp-settings.php' ) ) {
-	var_dump("in elseif"); die();
+	
 	/** The config file resides one level above ABSPATH but is not part of another installation */
 	require_once dirname( ABSPATH ) . '/wp-config.php';
 	
 
 } else {
-	var_dump("in else"); die();
+	var_dump("in else"); 
 	// A config file doesn't exist.
 
 	define( 'WPINC', 'wp-includes' );
 	require_once ABSPATH . WPINC . '/load.php';
-
+	die();
 	// Standardize $_SERVER variables across setups.
 	wp_fix_server_vars();
 
