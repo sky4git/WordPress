@@ -8,7 +8,7 @@
 
 /** Load WordPress Bootstrap */
 require_once __DIR__ . '/admin.php';
-var_dump('here'); die();
+
 /** Load WordPress dashboard API */
 require_once ABSPATH . 'wp-admin/includes/dashboard.php';
 
