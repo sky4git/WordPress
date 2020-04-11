@@ -1,1 +1,0 @@
-C:/Program Files/Apache24/htdocs/WordPress/wp-content/plugins/query-monitor/wp-content/db.php
