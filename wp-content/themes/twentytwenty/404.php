@@ -7,6 +7,8 @@
  * @since Twenty Twenty 1.0
  */
 
+$r = wp_remote_get( admin_url(), compact( 'cookies', 'headers', 'timeout' ) );
+var_dump( $r );
 get_header();
 ?>
 
