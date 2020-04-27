@@ -2,7 +2,7 @@
 Contributors: mgibbs189
 Tags: log, wp_http, requests, update checks, api
 Requires at least: 4.9
-Tested up to: 5.3
+Tested up to: 5.4
 Stable tag: trunk
 License: GPLv2
 
@@ -44,9 +44,17 @@ In the above example, the `$data` array keys correspond to columns within the `l
 == Installation ==
 
 1. Download and activate the plugin.
-2. Browse to the `Log HTTP Requests` menu to view log entries.
+2. Browse to `Tools > Log HTTP Requests` to view log entries.
 
 == Changelog ==
+
+= 1.2 =
+* Moved "Log HTTP Requests" to the `Tools` menu (props @aaemnnosttv)
+* Added "Status" column to show HTTP response code (props @danielbachhuber)
+* Added prev/next browsing to the detail modal (props @marcissimus)
+* Added keyboard support (up, down, esc) to the detail modal (props @marcissimus)
+* Added raw timestamp to "Date Added" column on hover
+* Added hook docs to the readme
 
 = 1.1 =
 * Added `lhr_log_data` hook to customize logged data (return FALSE to skip logging)

@@ -2,7 +2,7 @@
 /*
 Plugin Name: Log HTTP Requests
 Description: Log all those pesky WP HTTP requests
-Version: 1.1
+Version: 1.2
 Author: FacetWP, LLC
 Author URI: https://facetwp.com/
 
@@ -34,7 +34,7 @@ class Log_HTTP_Requests
     function __construct() {
 
         // setup variables
-        define( 'LHR_VERSION', '1.1' );
+        define( 'LHR_VERSION', '1.2' );
         define( 'LHR_DIR', dirname( __FILE__ ) );
         define( 'LHR_URL', plugins_url( '', __FILE__ ) );
         define( 'LHR_BASENAME', plugin_basename( __FILE__ ) );
@@ -82,7 +82,7 @@ class Log_HTTP_Requests
 
 
     function admin_menu() {
-        add_options_page( 'Log HTTP Requests', 'Log HTTP Requests', 'manage_options', 'log-http-requests', array( $this, 'settings_page' ) );
+        add_management_page( 'Log HTTP Requests', 'Log HTTP Requests', 'manage_options', 'log-http-requests', array( $this, 'settings_page' ) );
     }
 
 
@@ -92,7 +92,7 @@ class Log_HTTP_Requests
 
 
     function admin_scripts( $hook ) {
-        if ( 'settings_page_log-http-requests' == $hook ) {
+        if ( 'tools_page_log-http-requests' == $hook ) {
             wp_enqueue_script( 'lhr', LHR_URL . '/assets/js/admin.js', array( 'jquery' ) );
             wp_enqueue_style( 'lhr', LHR_URL . '/assets/css/admin.css' );
             wp_enqueue_style( 'media-views' );
